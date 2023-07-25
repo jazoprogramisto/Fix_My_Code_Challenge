@@ -15,7 +15,7 @@ class User():
 
     __password = None
 
-    def __init__(self, id):
+    def __init__(self):
         """
         Initialize a new user:
         - assigned an unique `id`
@@ -37,7 +37,6 @@ class User():
         - `None` if `pwd` is not a string
         - Hash `pwd` in MD5 before assign to `__password`
         """
-        self.pwd = pwd
         if pwd is None or type(pwd) is not str:
             self.__password = None
         else:
@@ -51,7 +50,6 @@ class User():
         - `False` if `__password` is `None`
         - Compare `__password` and the MD5 value of `pwd`
         """
-        self.pwd = pwd
         if pwd is None or type(pwd) is not str:
             return False
         if self.__password is None:
